@@ -1,0 +1,115 @@
+<html>
+<head>
+<title> Login Form</title>
+<style>
+ input[type=text], select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+ form{
+
+  display: inline-block;
+ }
+
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: trebuchet ms;
+    font-size: 18px;
+}
+
+.head1 {
+    font-family: trebuchet ms;
+    font-size: 70px;
+    color: black;
+    text-align: center;
+    background-color: white ;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    width: 100%;
+    border-left: 2px solid;
+    border-left-color: white;
+    border-right: 2px solid;
+    border-right-color: white;
+
+}
+.myButton {
+  -moz-box-shadow:inset 0px 1px 0px 0px #2e333d;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #2e333d;
+  box-shadow:inset 0px 1px 0px 0px #2e333d;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff));
+  background:-moz-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-webkit-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-o-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-ms-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0);
+  background-color:#ffffff;
+  border:1px solid #080808;
+  display:inline-block;
+  cursor:pointer;
+  color:#000000;
+  font-family:Arial;
+  font-size:13px;
+  font-weight:bold;
+  padding:6px 12px;
+  text-decoration:none;
+}
+.myButton:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff));
+  background:-moz-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-webkit-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-o-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-ms-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0);
+  background-color:#ffffff;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+  <h1 align="center" class="head1"> Login </h1><br>
+
+   <section align = "left"><input type="text" value="" placeholder="Username or Email"><br><br>
+     <input align = "left" type="password" value="" placeholder="Password"><br><br>
+     <p class ="remember_me">
+     <label>
+      <input type="checkbox" name="remember_me" id="remember_me">
+       Remember me on this computer
+     </label><br><br>
+     </p>
+       </section>
+       <form action="course_select.php"-->
+      <button align = "left" class ="myButton" type="submit">Login</button>
+      </form>
+    <form action="sign_up.html">
+    <button align = "left" class="myButton" type="submit">Sign Up</button>
+    </form>
+    </p>
+</body>
