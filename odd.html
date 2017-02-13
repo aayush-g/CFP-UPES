@@ -1,0 +1,124 @@
+<!DOCTYPE>
+<html>  
+<head>
+<script type="text/javascript" src="count.js"></script>
+<style>
+
+table {
+    border: 1px solid black;
+	border-collapse:collapse;
+	text-align: center;
+}
+th,td {
+ padding :10px;
+ border: 1px solid black;
+	border-collapse:collapse;
+	
+ }
+
+ .form1{
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+ form{
+
+  display: inline-block;
+ }
+
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: trebuchet ms;
+    font-size: 18px;
+}
+
+.head1 {
+    font-family: trebuchet ms;
+    font-size: 70px;
+    color: black;
+    text-align: center;
+    background-color: white ;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    width: 100%;
+    border-left: 2px solid;
+    border-left-color: white;
+    border-right: 2px solid;
+    border-right-color: white;
+
+}
+.myButton {
+  -moz-box-shadow:inset 0px 1px 0px 0px #2e333d;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #2e333d;
+  box-shadow:inset 0px 1px 0px 0px #2e333d;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff));
+  background:-moz-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-webkit-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-o-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-ms-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0);
+  background-color:#ffffff;
+  border:1px solid #080808;
+  display:inline-block;
+  cursor:pointer;
+  color:#000000;
+  font-family:Arial;
+  font-size:13px;
+  font-weight:bold;
+  padding:6px 12px;
+  text-decoration:none;
+}
+.myButton:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff));
+  background:-moz-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-webkit-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-o-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:-ms-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+  background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0);
+  background-color:#ffffff;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+
+
+
+</style>
+  
+</head>
+<body>  
+<table id="myTable"align="center" >  
+<tbody>
+
+<tr>
+<td>Duration</td>
+<td>No of Lecture Taken</td>
+<td>%of SylLabus covered</td>  
+<td>Assignment</td>
+<td>Test</td>
+<td>quiz</td>
+</tr> 
+<tr>
+<td><input type="text" id="m"></td>
+<td><input type="text" id="l"></td>
+<td><input type="text" id="s"></td>
+<td><input type="text" id="a"></td>
+<td><input type="text" id="t"></td>
+<td><input type="text" id="q"></td>
+<td><input type="button" class="myButton" onclick="addr();" value="Add Row"></td>
+</tr>
+</tbody>
+</table>  
+</body>
+</html>  
