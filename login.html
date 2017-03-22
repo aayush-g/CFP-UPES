@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
  input[type=text], select {
-    width: 20%;
+    width: 120%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 input[type=password], select {
-    width: 20%;
+    width: 120%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -36,8 +36,14 @@ input[type=password], select {
 
   <h1 align="center" class="head1"> Login </h1><br>
 
-   <section align = "left"><input type="text" value="" placeholder="Username or Email"><br><br>
-     <input align = "left" type="password" value="" placeholder="Password"><br><br>
+   <section align = "left">
+
+     <form action="login.php" method="POST">
+     <input type="text" name="userid" placeholder="Username or Email"><br><br>
+     <input align = "left" type="password" name=password placeholder="Password"><br><br>
+     <button align = "left" class ="myButton" type="submit">Login</button>
+     </form>
+
      <p class ="remember_me">
      <label>
       <input type="checkbox" name="remember_me" id="remember_me">
@@ -45,9 +51,9 @@ input[type=password], select {
      </label><br><br>
      </p>
        </section>
-       <form action="course_select.php"-->
-      <button align = "left" class ="myButton" type="submit">Login</button>
-      </form>
+       <!--form action="course_select.html">
+      
+      </form-->
     <form action="sign_up.html">
     <button align = "left" class="myButton" type="submit">Sign Up</button>
 
