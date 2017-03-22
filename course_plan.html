@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Course Plan</title>
+  </head>
+  <body>
+      <h1 align='center'>Course Plan</h1>
+      <h3>Prerequisites</h3>
+      <ul id="prereq_list">
+      </ul>
+      <input type="text" id="prereq" name="Prerequisites">
+      <button onclick="submitFunction1()" >Submit! </button><br><br>
+
+      <script>
+       function submitFunction1() {
+        var ul = document.getElementById("prereq_list");
+        var li = document.createElement("li");
+        var addnewname = document.getElementById('prereq').value;
+        li.appendChild(document.createTextNode(addnewname));
+        ul.appendChild(li);
+        ul.reset();
+      }
+      </script>
+
+      <h3>Subject Matter Experts</h3>
+      <ul id="smelist">
+      </ul>
+      <input type="text" id="sme" name="SME">
+      <button onclick="submitFunction2()" >Submit! </button><br><br>
+
+      <script>
+       function submitFunction2() {
+        var ul = document.getElementById("smelist");
+        var li = document.createElement("li");
+        var addnewname = document.getElementById("sme").value;
+        li.appendChild(document.createTextNode(addnewname));
+        ul.appendChild(li);
+        ul.reset();
+      }
+      </script>
+
+      <h3>Program Outcomes</h3>
+      <ul id="polist">
+      </ul>
+      <input type="text" id="po" name="ProgramOutcome">
+      <button onclick="submitFunction3()" >Submit! </button><br><br>
+
+      <script>
+       function submitFunction3() {
+        var ul = document.getElementById("polist");
+        var li = document.createElement("li");
+        var addnewname = document.getElementById("po").value;
+        li.appendChild(document.createTextNode(addnewname));
+        ul.appendChild(li);
+        ul.reset();
+      }
+    </script>
+
+    <h3>Objectives of Course</h3>
+    <ol id="colist">
+    </ol>
+    <input type="text" id="co" name="CourseObjective">
+    <button onclick="submitFunction4()" >Submit! </button><br><br>
+
+    <script>
+     function submitFunction4() {
+      var ul = document.getElementById("colist");
+      var li = document.createElement("li");
+      var addnewname = document.getElementById("co").value;
+      li.appendChild(document.createTextNode(addnewname));
+      ul.appendChild(li);
+      ul.reset();
+    }
+  </script>
+
+  <h3>Course Outcomes</h3>
+  <ul id="cotlist">
+  </ul>
+  <input type="text" id="cout" name="CourseOutcome">
+  <button onclick="submitFunction5()" >Submit! </button><br><br>
+
+  <script>
+   function submitFunction5() {
+    var ul = document.getElementById("cotlist");
+    var li = document.createElement("li");
+    var addnewname = document.getElementById("cout").value;
+    li.appendChild(document.createTextNode(addnewname));
+    ul.appendChild(li);
+    ul.reset();
+  }
+</script>
+
+  </body>
+</html>
