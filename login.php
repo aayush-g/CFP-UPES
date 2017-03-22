@@ -36,20 +36,26 @@
 </head>
 <body>
 
-  <h1 align="center" class="head1"> Course File Builder </h1><br>
-  
+  <h1 class="head1">
+  <img src= "upes.jpg" align="left" style="width:100px;height:80px"">Course File Builder
+  </h1><br>
+ 
    <div class="boxed" align="center">
 
 
 
-
+     
      <form action="login_check.php" method="POST" class="form1">
      <h2>Login to your account</h2>
      <input type="text" name="userid" placeholder="Username or Email" required>
      <input align = "center" type="password" name=password placeholder="Password" required><br>
-     <button align = "center" class ="myButton" type="submit">Login</button>
+     <button align = "center" class ="myButton" type="submit">Login</button><br>
      <?php $reasons = array("password" => "Wrong Username or Password");
       if (isset($_GET["loginFailed"])) echo $reasons[$_GET["reason"]];?>
+
+      <?php $msg = array("success" => "New Account created successfully. Please Login.");
+      if (isset($_GET["signUp"])) echo $msg[$_GET["reason1"]];?>
+ 
 
      </form>
 
