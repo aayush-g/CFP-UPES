@@ -1,48 +1,70 @@
 <?php
+session_start();
+?>
+<html>
+<head>
+<title> Login Form</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
 
-$id=$password="";
-$id= $_POST["userid"];
-$pass=$_POST["password"];
+ form{
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "CFB";
+  display: inline-block;
+ }
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+ h2 {
+  margin: 0 0 20px;
+  color: #33b5e5;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+
 }
 
-    if(!($stmt = $conn->prepare("SELECT PASSWORD FROM USER_TAB WHERE USERID = ?"))){
-            echo "Prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
-    }
+.form1 {
+  border:2px solid #ccc;
+  border-color: white;
+  padding: 50px 30px;
+  max-width:400px;
+  width:80%;
+  background: white;
+  margin:auto;
+ }
 
-    if(!$stmt->bind_param('s', $id)){
-        echo "Bind failed: (" . $stmt->errno . ")" . $stmt->error;
-    }
+ .form2 {
+  padding:20px 20px;
+}
 
-    if(!$stmt->execute()){
-     echo "Execute failed: (" . $stmt->errno .")" . $stmt->error;
-    }
+</style>
+</head>
+<body>
 
-    $userdata = $stmt->get_result();
-    $row = $userdata->fetch_array(MYSQLI_ASSOC);
+  <h1 align="center" class="head1"> Course File Builder </h1><br>
 
-    $stmt->bind_result($password);
-    $stmt->store_result();
+   <div class="boxed" align="center">
 
-             if($pass==$row['PASSWORD']){
 
-            $_SESSION['user'] = $_POST['id'];
-            header('Location: course_select.html');
-            exit();
-        }
 
-    else{
-        echo "Login Failed: (" . $stmt->errno .")" . $stmt->error;
-    }
-$stmt->close();
-$conn->close();
+
+     <form action="login_check.php" method="POST" class="form1">
+     <h2>Login to your account</h2>
+     <input type="text" name="userid" placeholder="Username or Email" required>
+     <input align = "center" type="password" name=password placeholder="Password" required><br>
+     <button align = "center" class ="myButton" type="submit">Login</button>
+     <?php $reasons = array("password" => "Wrong Username or Password");
+      if (isset($_GET["loginFailed"])) echo $reasons[$_GET["reason"]];?>
+
+     </form>
+
+     <br>
+
+     <form action="sign_up.php" class="form2">
+      <button align = "center" class="myButton" type="submit">Sign Up</button>
+     </form>
+     <form action="admin.html" class="form2">
+      <button align = "center" class="myButton" type="submit">Admin</button><br>
+     </form>
+
+    </div>
+
+</body>
