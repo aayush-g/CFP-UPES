@@ -18,7 +18,9 @@
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    
+
 }
 
 /* Modal Content */
@@ -28,12 +30,13 @@
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    
 }
 
 /* Add Animation */
@@ -64,39 +67,82 @@
 
 .modal-header {
     padding: 2px 16px;
-    background-color: lightblue;
+    background-color: lightgray;
     color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-top-color: #33b5e5;
+    border-left-color: lightgray;
+    border-right-color: lightgray;
+    border-bottom-color: lightgray;
+    
 }
 
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: lightblue;
+    background-color: lightgray;
     color: white;
 }
 
+.mycButton {
+  cursor: pointer;
+  background: #33b5e5;
+  width: 50%;
+  border: 0;
+  padding: 10px 15px;
+  color: #ffffff;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+
+.para1{
+
+
+  border:2px solid #ccc;
+  border-color: white;
+  padding: 50px 30px;
+  max-width:400px;
+  width:80%;
+  background: white;
+  margin:auto;
+}
+
+.mycButton:hover {
+  background: #178ab4;
+}
+
+.blur-filter {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
 
 </style>
 
 
 <body>
 <p class='head1'> Select Courses</p>
+<div class="boxed">
 
-Hi there!
-<br><br>Already existing courses :
-   <ul id ="courselist">
-   <li>
-   <a href="Dashboard.html">Some Course</a>
-   </li>
-     
+<h2  align="center">Hi there!</h2><br>
+  <div class="para1">
+   Already existing courses :
+   <ul id ="courselist" >
+    <li>
+     <a href="dashboard.html">Some Course</a>
+    </li>  
    </ul>
-
-ADD New Course! --:>    
-
-
-<button id ="myButton1" class="myButton" >Add Course!</button>
-
+   <br>
+<br><br><br><br>
+<button id ="myButton1" class="mycButton" >Add Course!</button>
+</div>
+<br><br><br>
+</div>
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
@@ -111,7 +157,7 @@ ADD New Course! --:>
       Hi!<br><br>
       Branch Name : <br><input type = "text" id='bname1' name="bname"><br><br>
       Subject Name :<br> <input type = "text" name="sbjname"><br><br>
-      Semester : <br><input type = "integer" name="sem"><br><br>
+      Semester : <br><input type = "text" name="sem"><br><br>
       </p>
     
       <button class="myButton" onclick="submitFunction()" >Submit! </button><br><br>
@@ -122,7 +168,7 @@ ADD New Course! --:>
         var addnewname = document.getElementById('bname1').value;
         li.appendChild(document.createTextNode(addnewname));
         ul.appendChild(li);
-       alert("Submitted :)");
+       alert("Submitted! ");
       }
 
     </script>
@@ -151,6 +197,23 @@ ADD New Course! --:>
         modal.style.display = "none";
     }
 }
+
+</script>
+
+
+
+<script >
+  
+$( "myModal" ).on( "popupbeforeposition", function () {
+    $.mobile.pageContainer.pagecontainer( "getActivePage" )
+        .not(this) /* exclude popup */
+        .addClass( "blur-filter" );
+}).on( "popupafterclose", function () {
+    $( ".blur-filter" )
+        .removeClass( "blur-filter" );
+});
+
+
 
 </script> 
 </body>

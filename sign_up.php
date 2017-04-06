@@ -25,9 +25,9 @@
 
 <body>
 
- <h1 align="center" class="head1">
- <img src= "upes.jpg" align="left" style="width:100px;height:80px"">Course File Builder </h1><br>
-
+ <h1 class="head1">
+  <img src= "upes.jpg" align="left" style="width:150px;height:80px"">Course File Builder
+  </h1><br>
   <div class="boxed">
    
    <form action="sign_up_process.php" method="POST" class="form1">

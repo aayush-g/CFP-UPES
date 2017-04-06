@@ -37,14 +37,11 @@
 <body>
 
   <h1 class="head1">
-  <img src= "upes.jpg" align="left" style="width:100px;height:80px"">Course File Builder
+  <img src= "upes.jpg" align="left" style="width:150px;height:80px"">Course File Builder
   </h1><br>
  
    <div class="boxed" align="center">
-
-
-
-     
+    
      <form action="login_check.php" method="POST" class="form1">
      <h2>Login to your account</h2>
      <input type="text" name="userid" placeholder="Username or Email" required>

@@ -45,7 +45,6 @@ body {
 .boxed{
   position: relative;
   background: #ffffff;
-  
   max-width: 320px;
   width:50%;
   border-top: 5px solid #33b5e5;
