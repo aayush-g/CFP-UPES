@@ -36,10 +36,10 @@ if ($conn->connect_error) {
     $stmt->store_result();
 
     if($pass==$row['PASSWORD']){
-      $_SESSION['user'] = $_POST['id'];
+      $_SESSION['user'] = $id;
       $name=$row['NAME'];
       $_SESSION['name']=$name;
-      header('Location: course_select.html');
+      header('Location: course_select.php');
       exit();
         }
 

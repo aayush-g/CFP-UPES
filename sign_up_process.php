@@ -4,6 +4,7 @@ session_start();
 $id=$name=$password=$contact_no=$email="";
 $id= $_POST["userid"];
 $name= $_POST["name"];
+//$password_hash=password_hash($_POST["password"],PASSWORD_DEFAULT);
 $password_hash=$_POST["password"];
 $contact_no=$_POST["contact_no"];
 $email=$_POST["email"];
@@ -29,8 +30,14 @@ if(!($stmt = $conn->prepare("INSERT INTO USER_TAB VALUES (?,?,?,?,'CIT',0,'OSS',
     }
 
     if($stmt) {
-         header("location:login.php?signUp=true&reason1=success");
-    }
+      $thisdir = getcwd();
+      $folderPath = $thisdir . '\/' . $id;
+      $oldmask = umask(0);
+      mkdir($id, 0777,true);
+      umask($oldmask);
+      header("location:login.php?signUp=true&reason1=success");
+      }
+    
 
     else{
         echo "Registration failed";
