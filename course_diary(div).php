@@ -7,9 +7,8 @@ session_start();
 <head>
 
 <title> Course Progress</title>
-<script type="text/javascript" src="count1.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
 
 
 
@@ -36,10 +35,11 @@ th,td {
     box-sizing: border-box;
 }
 
- form{
+ #form{
 
   display: inline-block;
  }
+
 .myButton{
 
 width : 250px;

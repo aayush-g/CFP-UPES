@@ -13,10 +13,10 @@ if(!(isset($_SESSION['user']))){
     <link rel="stylesheet" href="style.css">
   </head>
   <style>
-    .mycButton {
+    .myButton {
       cursor: pointer;
       background: #33b5e5;
-      width: 50%;
+      width: 45%;
       border: 0;
       padding: 10px 15px;
       color: #ffffff;
@@ -26,12 +26,49 @@ if(!(isset($_SESSION['user']))){
     .para1{
       border:2px solid #ccc;
       border-color: white;
-      padding: 50px 30px;
-      max-width:400px;
-      width:80%;
+      padding: 50px 0px;
+      max-width:100%;
+      width:90%;
       background: white;
       margin:auto;
     }
+
+    #myBtn1, #myBtn2{
+         
+         display:inline-block;
+
+
+    }
+
+
+    #coursetodelete{
+
+   outline: none;
+  display: block;
+  width: 50%;
+  border: 1px solid #d9d9d9;
+  
+  margin: 15 15 20px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  font-weight: 400;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+
+    }
+ 
+  #submitdelete{
+
+   
+  margin: 15 15 20px;
+  padding: 10px 15px;
+
+
+  }
+ 
+
+
+
   </style>
   <body>
     <main id="myContainer" class="MainContainer">
@@ -58,7 +95,7 @@ if(!(isset($_SESSION['user']))){
         die("Connection failed: " . $conn->connect_error);
         }
 
-        if(!($stmt = $conn->prepare("SELECT COURSE_TITLE FROM COURSE_TAB WHERE ALLOTTED_TO = ?"))){
+        if(!($stmt = $conn->prepare("SELECT COURSE_CODE FROM COURSE_TAB WHERE ALLOTTED_TO = ?"))){
                 echo "Prepare failed: (" . $conn->errno . ")" . $conn->error;
         }
 
@@ -86,7 +123,7 @@ if(!(isset($_SESSION['user']))){
 
           echo "</tr>";
 */
-          echo '<li><a href="dashboard.php?course='.$row["COURSE_TITLE"].'">'.$row["COURSE_TITLE"].'</a></li>';
+         echo '<li><a href="dashboard.php?course='.$row["COURSE_CODE"].'">'.$row["COURSE_CODE"].'</a></li>';
         //echo "<li>{$row["COURSE_TITLE"]}</li>";
     }
     /*    foreach($row as $value)
@@ -108,11 +145,21 @@ if(!(isset($_SESSION['user']))){
           <br>
           <br>
           <br>
-          <button id ="myBtn" class="mycButton" >Add Course!
+          <div>
+          
+          <button id ="myBtn1" class="myButton" >Add Course
           </button>
+          <button id ="myBtn2" class="myButton" onclick="display()" type="button" >Delete Course
+          </button>
+          
+          </div>
         </div>
+        <form style="display:none" id="formtodelete" action="deletecourse.php" method="POST">
+            <input type="text" id="coursetodelete" name="course" >
+            <input type ="submit" id="submitdelete" class="myButton">
+        </form>
         <br>
-        <br>
+        
         <br>
       </div>
     </main>
@@ -131,22 +178,22 @@ if(!(isset($_SESSION['user']))){
         <p>
           Course Code :
           <br>
-          <input align="center" type = "text" name="coursecode">
+          <input align="center" type = "text" name="coursecode" required>
           <br>
           <br>
           Branch Name :
           <br>
-          <input align="center" type = "text" id='bname1' name="bname">
+          <input align="center" type = "text" id='bname1' name="bname" required>
           <br>
           <br>
           Subject Name :
           <br>
-          <input align="center" type = "text" name="sbjname">
+          <input align="center" type = "text" name="sbjname" required>
           <br>
           <br>
           Semester :
           <br>
-          <input align="center" type = "text" name="sem">
+          <input align="center" type = "text" name="sem" required>
           <br>
           <br>
         </p>
@@ -157,23 +204,32 @@ if(!(isset($_SESSION['user']))){
         <br>
       </div>
     </div>
-    <script src="app.min.js">
+
+
+    <script>
+    var modal = document.getElementById("myModal"),
+    body = document.getElementsByTagName("body"),
+    container = document.getElementById("myContainer"),
+    btnOpen = document.getElementById("myBtn1"),
+    btnClose = document.getElementById("closeModal");
+btnOpen.onclick = function() {
+    modal.className = "Modal is-visuallyHidden", setTimeout(function() {
+        container.className = "MainContainer is-blurred", modal.className = "Modal"
+    }, 100), container.parentElement.className = "ModalOpen"
+}, btnClose.onclick = function() {
+    modal.className = "Modal is-hidden is-visuallyHidden", body.className = "", container.className = "MainContainer", container.parentElement.className = ""
+}, window.onclick = function(e) {
+    e.target == modal && (modal.className = "Modal is-hidden", body.className = "", container.className = "MainContainer", container.parentElement.className = "")
+};
     </script>
     <script>
-      var modal = document.getElementById('myModal');
-      var btn = document.getElementById("myButton1");
-      var span = document.getElementsByClassName("close")[0];
-      btn.onclick = function() {
-        modal.style.display = "block";
-      }
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
+    
+    function display() {
+              
+                document.getElementById("formtodelete").style.display = 'block';
         }
-      }
+
+
     </script>
   </body>
 </html>

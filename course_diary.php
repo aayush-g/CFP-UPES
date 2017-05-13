@@ -7,9 +7,13 @@ session_start();
 <head>
 
 <title> Course Progress</title>
-
-<script type="text/javascript" src="count1.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
 <style>
 
 .myButton {
@@ -155,13 +159,7 @@ document.getElementById("home").onclick = function () {
     };
 
 function submitForm(){
-
- var f = document.getElementsByTagName('form1')[0];
-  if(f.checkValidity()) {
-    f.submit();
-  } else {
-    alert(document.getElementById('example').validationMessage);
-  }
+ document.getElementById('form1').submit();
  
 }
 

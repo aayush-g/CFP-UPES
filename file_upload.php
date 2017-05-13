@@ -2,6 +2,7 @@
 session_start();
 
 $file_type=$_POST['submit'];
+$file_type=$file_type;
 $currpath=getcwd();
 
 $allowedExts = array("pdf");
@@ -18,9 +19,9 @@ if (($_FILES["file"]["size"] < 90000000000000000000000000000000000) && in_array(
             echo $_FILES["file"]["name"] . " already exists. ";
         }else{
             move_uploaded_file($_FILES["file"]["tmp_name"],
-            $currpath. '/'.$_SESSION['user'] .'/'. $file_type.'.pdf');
+            $currpath. '/'.$_SESSION['user'] .'/'.$_SESSION['course'].'/'. $file_type.'.pdf');
             echo "Stored in: " . $_SESSION['user'] . $file_type;
-            chmod($currpath. '/'.$_SESSION['user'] .'/'. $file_type.'.pdf',0777);
+            chmod(  $currpath. '/'.$_SESSION['user'] .'/'.$_SESSION['course'].'/'. $file_type.'.pdf',0777);
         }
     }
 }else{

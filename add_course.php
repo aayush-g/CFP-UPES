@@ -29,6 +29,15 @@ if ($conn->connect_error) {
     if(!$stmt->execute()){
      echo "Execute failed: (" . $stmt->errno .")" . $stmt->error;
     }
+
+    if($stmt) {
+      $thisdir = getcwd();
+      $folderPath = $thisdir . '/' . $_SESSION['user'].'/'.$code;
+      $oldmask = umask(0);
+      echo $folderPath;
+      mkdir($folderPath, 0777,true);
+      umask($oldmask);
+      }
 $stmt->close();
 $conn->close();
 header("location:course_select.php");

@@ -31,7 +31,7 @@ th,td {
     box-sizing: border-box;
 }
 
- form{
+ #form{
 
   display: inline-block;
  }
